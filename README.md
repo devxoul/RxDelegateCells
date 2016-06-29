@@ -2,8 +2,7 @@ RxDelegateCells
 ===============
 
 ![Swift](https://img.shields.io/badge/Swift-2.2-orange.svg)
-[![Build Status](https://travis-ci.org/devxoul/Then.svg)](https://travis-ci.org/devxoul/Then)
-[![CocoaPods](http://img.shields.io/cocoapods/v/Then.svg)](https://cocoapods.org/pods/Then)
+[![CocoaPods](http://img.shields.io/cocoapods/v/RxDelegateCells.svg)](https://cocoapods.org/pods/RxDelegateCells)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 UITableView Cell Height and UICollectionView Cell Size for RxSwift.
