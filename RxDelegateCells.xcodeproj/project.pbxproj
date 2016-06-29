@@ -17,6 +17,7 @@
 		03FB15051D241D2C00089DA4 /* RxTableViewSectionedReloadHeightDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB14FD1D241D2C00089DA4 /* RxTableViewSectionedReloadHeightDelegate.swift */; };
 		03FB15061D241D2C00089DA4 /* UITableView+RxDelegateCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB14FE1D241D2C00089DA4 /* UITableView+RxDelegateCells.swift */; };
 		03FB15081D241D3000089DA4 /* ObservableType+DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB15071D241D3000089DA4 /* ObservableType+DelegateProxy.swift */; };
+		8CDBC85EAA2C0916F656DFC6 /* Pods_RxDelegateCells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D258D24886CD7ED0C1A1E /* Pods_RxDelegateCells.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		03FB14FD1D241D2C00089DA4 /* RxTableViewSectionedReloadHeightDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewSectionedReloadHeightDelegate.swift; sourceTree = "<group>"; };
 		03FB14FE1D241D2C00089DA4 /* UITableView+RxDelegateCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxDelegateCells.swift"; sourceTree = "<group>"; };
 		03FB15071D241D3000089DA4 /* ObservableType+DelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+DelegateProxy.swift"; sourceTree = "<group>"; };
+		3EE1934D3CE04C11CDA38D91 /* Pods-RxDelegateCells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDelegateCells.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDelegateCells/Pods-RxDelegateCells.release.xcconfig"; sourceTree = "<group>"; };
+		B7576A10463710D4296F890D /* Pods-RxDelegateCells.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDelegateCells.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDelegateCells/Pods-RxDelegateCells.debug.xcconfig"; sourceTree = "<group>"; };
+		D76D258D24886CD7ED0C1A1E /* Pods_RxDelegateCells.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDelegateCells.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CDBC85EAA2C0916F656DFC6 /* Pods_RxDelegateCells.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +56,8 @@
 				03FB14E91D241CB300089DA4 /* Sources */,
 				03FB14F21D241CD100089DA4 /* Support */,
 				03FB14DF1D241C5700089DA4 /* Products */,
+				53DDEA8FF589A2983C4B3F4D /* Pods */,
+				988AA473F7CA35999D352617 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +110,23 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
+		53DDEA8FF589A2983C4B3F4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7576A10463710D4296F890D /* Pods-RxDelegateCells.debug.xcconfig */,
+				3EE1934D3CE04C11CDA38D91 /* Pods-RxDelegateCells.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		988AA473F7CA35999D352617 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D76D258D24886CD7ED0C1A1E /* Pods_RxDelegateCells.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -121,10 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03FB14E61D241C5800089DA4 /* Build configuration list for PBXNativeTarget "RxDelegateCells" */;
 			buildPhases = (
+				CA7851CFBF3DE1A7DACBA143 /* [CP] Check Pods Manifest.lock */,
 				03FB14D91D241C5700089DA4 /* Sources */,
 				03FB14DA1D241C5700089DA4 /* Frameworks */,
 				03FB14DB1D241C5700089DA4 /* Headers */,
 				03FB14DC1D241C5700089DA4 /* Resources */,
+				FD7FCE8C4BA90542DD10E609 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +201,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA7851CFBF3DE1A7DACBA143 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD7FCE8C4BA90542DD10E609 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxDelegateCells/Pods-RxDelegateCells-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03FB14D91D241C5700089DA4 /* Sources */ = {
@@ -289,6 +348,7 @@
 		};
 		03FB14E71D241C5800089DA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7576A10463710D4296F890D /* Pods-RxDelegateCells.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -305,6 +365,7 @@
 		};
 		03FB14E81D241C5800089DA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE1934D3CE04C11CDA38D91 /* Pods-RxDelegateCells.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -338,6 +399,7 @@
 				03FB14E81D241C5800089DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
