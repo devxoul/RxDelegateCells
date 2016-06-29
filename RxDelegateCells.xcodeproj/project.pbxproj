@@ -152,9 +152,9 @@
 		03FB14F51D241D2C00089DA4 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				03FB14F61D241D2C00089DA4 /* RxCollectionViewSectionedReloadSizeDelegate.swift */,
-				03FB14F71D241D2C00089DA4 /* RxCollectionViewSectionedSizeDelegate.swift */,
 				03FB14F81D241D2C00089DA4 /* RxCollectionViewSizeDelegateType.swift */,
+				03FB14F71D241D2C00089DA4 /* RxCollectionViewSectionedSizeDelegate.swift */,
+				03FB14F61D241D2C00089DA4 /* RxCollectionViewSectionedReloadSizeDelegate.swift */,
 				03FB14F91D241D2C00089DA4 /* UICollectionView+RxDelegateCells.swift */,
 			);
 			path = UICollectionView;
