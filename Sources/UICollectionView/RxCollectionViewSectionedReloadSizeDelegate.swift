@@ -12,17 +12,17 @@ public class RxCollectionViewSectionedReloadSizeDelegate: RxCollectionViewSectio
 
     public func collectionView(collectionView: UICollectionView, observedCellSizes: [[CGSize]]) {
         self.cellSizes = observedCellSizes
-        collectionView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), collectionView.reloadData)
     }
 
     public func collectionView(collectionView: UICollectionView, observedHeaderReferenceSizes: [CGSize]) {
         self.headerReferenceSizes = observedHeaderReferenceSizes
-        collectionView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), collectionView.reloadData)
     }
 
     public func collectionView(collectionView: UICollectionView, observedFooterReferenceSizes: [CGSize]) {
         self.footerReferenceSizes = observedFooterReferenceSizes
-        collectionView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), collectionView.reloadData)
     }
 
 }

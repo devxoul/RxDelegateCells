@@ -12,17 +12,17 @@ public class RxTableViewSectionedReloadHeightDelegate: RxTableViewSectionedHeigh
 
     public func tableView(tableView: UITableView, observedCellHeights: [[CGFloat]]) {
         self.cellHeights = observedCellHeights
-        tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), tableView.reloadData)
     }
 
     public func tableView(tableView: UITableView, observedHeaderHeights: [CGFloat]) {
         self.headerHeights = observedHeaderHeights
-        tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), tableView.reloadData)
     }
 
     public func tableView(tableView: UITableView, observedFooterHeights: [CGFloat]) {
         self.footerHeights = observedFooterHeights
-        tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), tableView.reloadData)
     }
 
 }
