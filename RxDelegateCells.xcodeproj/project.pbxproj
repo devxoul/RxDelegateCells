@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0308098F1D2549BE00252F1A /* CollectionType+NSIndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308098E1D2549BE00252F1A /* CollectionType+NSIndexPath.swift */; };
 		03FB14ED1D241CB300089DA4 /* RxDelegateCells.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB14EA1D241CB300089DA4 /* RxDelegateCells.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03FB14FF1D241D2C00089DA4 /* RxCollectionViewSectionedReloadSizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB14F61D241D2C00089DA4 /* RxCollectionViewSectionedReloadSizeDelegate.swift */; };
 		03FB15001D241D2C00089DA4 /* RxCollectionViewSectionedSizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB14F71D241D2C00089DA4 /* RxCollectionViewSectionedSizeDelegate.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0308098E1D2549BE00252F1A /* CollectionType+NSIndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+NSIndexPath.swift"; sourceTree = "<group>"; };
 		0345515D7EDF60B61A7B6A4D /* Pods_RxDelegateCells_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDelegateCells_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB14DE1D241C5700089DA4 /* RxDelegateCells.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxDelegateCells.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB14EA1D241CB300089DA4 /* RxDelegateCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxDelegateCells.h; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				03FB14FA1D241D2C00089DA4 /* UITableView */,
 				03FB14F51D241D2C00089DA4 /* UICollectionView */,
 				03FB15071D241D3000089DA4 /* ObservableType+DelegateProxy.swift */,
+				0308098E1D2549BE00252F1A /* CollectionType+NSIndexPath.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0308098F1D2549BE00252F1A /* CollectionType+NSIndexPath.swift in Sources */,
 				03FB15061D241D2C00089DA4 /* UITableView+RxDelegateCells.swift in Sources */,
 				03FB15041D241D2C00089DA4 /* RxTableViewSectionedHeightDelegate.swift in Sources */,
 				03FB15031D241D2C00089DA4 /* RxTableViewHeightDelegateType.swift in Sources */,
