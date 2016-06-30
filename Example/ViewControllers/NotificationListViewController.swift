@@ -67,6 +67,12 @@ class NotificationListViewController: UIViewController {
         }
 
         // Input
+        self.tableView.rx_observe(CGRect.self, "bounds")
+            .map { $0?.width ?? 0 }
+            .distinctUntilChanged()
+            .bindTo(viewModel.tableViewWidth)
+            .addDisposableTo(self.disposeBag)
+
         self.refreshControl.rx_controlEvent(.ValueChanged)
             .bindTo(viewModel.refreshControlDidChangeValue)
             .addDisposableTo(self.disposeBag)

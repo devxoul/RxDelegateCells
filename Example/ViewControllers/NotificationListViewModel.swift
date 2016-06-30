@@ -14,6 +14,7 @@ typealias NotificationListSectionModel = SectionModel<Void, NotificationCellMode
 
 protocol NotificationListViewModelType {
     // Input
+    var tableViewWidth: BehaviorSubject<CGFloat> { get }
     var refreshControlDidChangeValue: PublishSubject<Void> { get }
 
     // Output
@@ -26,6 +27,7 @@ struct NotificationListViewModel: NotificationListViewModelType {
 
     // MARK: Input
 
+    let tableViewWidth: BehaviorSubject<CGFloat> = BehaviorSubject(value: 0)
     let refreshControlDidChangeValue: PublishSubject<Void> = PublishSubject()
 
 
@@ -44,10 +46,13 @@ struct NotificationListViewModel: NotificationListViewModelType {
     // MARK: Initializing
 
     init(api: API) {
+        let tableViewWidth = self.tableViewWidth.distinctUntilChanged()
         let cellModels = self.refreshControlDidChangeValue
             .flatMap { api.fetchNotificationList() }
             .map { notifications in
-                notifications.map { NotificationCellModel(notification: $0) as NotificationCellModelType }
+                notifications.map {
+                    NotificationCellModel(notification: $0, cellWidth: tableViewWidth) as NotificationCellModelType
+                }
             }
             .asDriver(onErrorJustReturn: [])
 

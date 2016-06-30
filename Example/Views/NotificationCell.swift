@@ -48,13 +48,6 @@ final class NotificationCell: UITableViewCell {
         self.disposeBag = DisposeBag()
         guard let disposeBag = disposeBag else { return }
 
-        // Input
-        self.rx_observe(CGRect.self, "bounds")
-            .map { $0?.width ?? 0 }
-            .distinctUntilChanged()
-            .bindTo(viewModel.cellWidth)
-            .addDisposableTo(disposeBag)
-
         // Output
         viewModel.message
             .drive(self.messageLabel.rx_attributedText)
