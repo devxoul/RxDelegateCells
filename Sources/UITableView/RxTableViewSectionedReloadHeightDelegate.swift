@@ -11,8 +11,14 @@ import UIKit
 public class RxTableViewSectionedReloadHeightDelegate: RxTableViewSectionedHeightDelegate, RxTableViewHeightDelegateType {
 
     public func tableView(tableView: UITableView, observedCellHeights: [[CGFloat]]) {
+        guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else { return }
+        for indexPath in visibleIndexPaths {
+            if self.cellHeights[indexPath] != observedCellHeights[indexPath] {
+                dispatch_async(dispatch_get_main_queue(), tableView.reloadData)
+                break
+            }
+        }
         self.cellHeights = observedCellHeights
-        dispatch_async(dispatch_get_main_queue(), tableView.reloadData)
     }
 
     public func tableView(tableView: UITableView, observedHeaderHeights: [CGFloat]) {
