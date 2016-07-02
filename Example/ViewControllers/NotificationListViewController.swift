@@ -19,6 +19,7 @@ class NotificationListViewController: UIViewController {
     // MARK: Properties
 
     private let disposeBag = DisposeBag()
+    let dataSource = RxTableViewSectionedReloadDataSource<NotificationListSectionModel>()
 
     let refreshControl = UIRefreshControl()
     let tableView = UITableView().then {
@@ -57,8 +58,6 @@ class NotificationListViewController: UIViewController {
     // MARK: Configuring
 
     private func configure(viewModel: NotificationListViewModelType) {
-        let dataSource = RxTableViewSectionedReloadDataSource<NotificationListSectionModel>()
-        let delegate = RxTableViewSectionedReloadHeightDelegate()
 
         dataSource.configureCell = { _, tableView, indexPath, viewModel in
             let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell") as! NotificationCell
@@ -80,9 +79,16 @@ class NotificationListViewController: UIViewController {
             .drive(self.tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(self.disposeBag)
 
-        viewModel.cellHeights
-            .drive(self.tableView.rx_cellHeightWithDelegate(delegate))
-            .addDisposableTo(self.disposeBag)
+        // this could be modelled more nicely and pulled into it's own object,
+        // but this is for simplicity sake
+        self.tableView.rx_setDelegate(self)
     }
 
+}
+
+extension NotificationListViewController : UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let item = dataSource.itemAtIndexPath(indexPath)
+        return item.calculateCellHeight(tableView.bounds.size.width)
+    }
 }

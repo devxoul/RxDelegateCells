@@ -10,7 +10,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-typealias NotificationListSectionModel = SectionModel<Void, NotificationCellModelType>
+typealias NotificationListSectionModel = SectionModel<Void, NotificationCellModel>
 
 protocol NotificationListViewModelType {
     // Input
@@ -19,7 +19,6 @@ protocol NotificationListViewModelType {
     // Output
     var refreshControlRefreshing: Driver<Bool> { get }
     var sections: Driver<[NotificationListSectionModel]> { get }
-    var cellHeights: Driver<[[Driver<CGFloat>]]> { get }
 }
 
 struct NotificationListViewModel: NotificationListViewModelType {
@@ -33,38 +32,31 @@ struct NotificationListViewModel: NotificationListViewModelType {
 
     let refreshControlRefreshing: Driver<Bool>
     let sections: Driver<[NotificationListSectionModel]>
-    let cellHeights: Driver<[[Driver<CGFloat>]]>
-
-
-    // MARK: Private
-
-    private let _refreshControlRefreshing: PublishSubject<Bool>
-
 
     // MARK: Initializing
 
     init(api: API) {
-        let cellModels = self.refreshControlDidChangeValue
-            .flatMap { api.fetchNotificationList() }
-            .map { notifications in
-                notifications.map { NotificationCellModel(notification: $0) as NotificationCellModelType }
+        let activityIndicator = ActivityIndicator()
+        let cellModels = self.refreshControlDidChangeValue.asDriver(onErrorJustReturn: ())
+            .flatMapLatest {
+                api.fetchNotificationList()
+                    .trackActivity(activityIndicator)
+                    .asDriver(onErrorJustReturn: [])
             }
-            .asDriver(onErrorJustReturn: [])
+            .map { notifications in
+                notifications.map { NotificationModel(notification: $0) as NotificationModelType }
+            }
 
-        let _refreshControlRefreshing = PublishSubject<Bool>()
-        self._refreshControlRefreshing = _refreshControlRefreshing
-        self.refreshControlRefreshing = self._refreshControlRefreshing.asDriver(onErrorJustReturn: false)
+        self.refreshControlRefreshing = activityIndicator.asDriver()
 
         self.sections = cellModels
-            .map { cellModels in
-                [NotificationListSectionModel(model: Void(), items: cellModels)]
+            .flatMapLatest { models -> Driver<[NotificationCellModel]> in
+                models
+                    .map { $0.message }
+                    .combineLatest { $0.map(NotificationCellModel.init) }
             }
-            .doOnNext { _ in
-                _refreshControlRefreshing.onNext(false)
+            .map { (cellModels: [NotificationCellModel]) in
+                [NotificationListSectionModel(model: (), items: cellModels)]
             }
-
-        self.cellHeights = cellModels.map { cellModels in
-            [cellModels.map { $0.cellHeight }]
-        }
     }
 }

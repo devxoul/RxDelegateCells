@@ -11,9 +11,11 @@ import RxSwift
 struct API {
 
     func fetchNotificationList() -> Observable<[Notification]> {
-        let count = random() % 10 + 10
-        let notifications = (0..<count).map { _ in self.randomNotification() }
-        return Observable.just(notifications).concat(Observable.never())
+        return Observable.deferred {
+            let count = random() % 10 + 10
+            let notifications = (0..<count).map { _ in self.randomNotification() }
+            return Observable.just(notifications)
+        }
     }
 
     private func randomNotification() -> Notification {

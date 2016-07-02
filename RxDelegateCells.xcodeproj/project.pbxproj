@@ -24,12 +24,14 @@
 		03FB15271D24224B00089DA4 /* NotificationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB15241D24224B00089DA4 /* NotificationListViewModel.swift */; };
 		03FB15291D24227900089DA4 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB15281D24227900089DA4 /* Notification.swift */; };
 		03FB152B1D2422BF00089DA4 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB152A1D2422BF00089DA4 /* NotificationCell.swift */; };
-		03FB152D1D2422C400089DA4 /* NotificationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB152C1D2422C400089DA4 /* NotificationCellModel.swift */; };
+		03FB152D1D2422C400089DA4 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB152C1D2422C400089DA4 /* NotificationModel.swift */; };
 		03FB15331D24237A00089DA4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB15321D24237A00089DA4 /* API.swift */; };
 		03FB15361D24290100089DA4 /* RxDelegateCells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FB14DE1D241C5700089DA4 /* RxDelegateCells.framework */; };
 		03FB15371D24290100089DA4 /* RxDelegateCells.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FB14DE1D241C5700089DA4 /* RxDelegateCells.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CDBC85EAA2C0916F656DFC6 /* Pods_RxDelegateCells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D258D24886CD7ED0C1A1E /* Pods_RxDelegateCells.framework */; };
 		C82FA35E804ABCEB77EC3309 /* Pods_RxDelegateCells_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0345515D7EDF60B61A7B6A4D /* Pods_RxDelegateCells_Example.framework */; };
+		C8C785811D27D57A00CE9F82 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C785801D27D57A00CE9F82 /* ActivityIndicator.swift */; };
+		C8C785831D27D75800CE9F82 /* NotificationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C785821D27D75800CE9F82 /* NotificationCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,12 +81,14 @@
 		03FB15241D24224B00089DA4 /* NotificationListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationListViewModel.swift; sourceTree = "<group>"; };
 		03FB15281D24227900089DA4 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		03FB152A1D2422BF00089DA4 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
-		03FB152C1D2422C400089DA4 /* NotificationCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCellModel.swift; sourceTree = "<group>"; };
+		03FB152C1D2422C400089DA4 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		03FB15321D24237A00089DA4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		06D22BB2532FD277E044BB41 /* Pods-RxDelegateCells-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDelegateCells-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDelegateCells-Example/Pods-RxDelegateCells-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3EE1934D3CE04C11CDA38D91 /* Pods-RxDelegateCells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDelegateCells.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDelegateCells/Pods-RxDelegateCells.release.xcconfig"; sourceTree = "<group>"; };
 		B7576A10463710D4296F890D /* Pods-RxDelegateCells.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDelegateCells.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDelegateCells/Pods-RxDelegateCells.debug.xcconfig"; sourceTree = "<group>"; };
 		C7A16F7CA38C37473436CAC5 /* Pods-RxDelegateCells-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDelegateCells-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDelegateCells-Example/Pods-RxDelegateCells-Example.release.xcconfig"; sourceTree = "<group>"; };
+		C8C785801D27D57A00CE9F82 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		C8C785821D27D75800CE9F82 /* NotificationCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCellModel.swift; sourceTree = "<group>"; };
 		D76D258D24886CD7ED0C1A1E /* Pods_RxDelegateCells.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDelegateCells.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +178,7 @@
 		03FB150E1D24203600089DA4 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				C8C785801D27D57A00CE9F82 /* ActivityIndicator.swift */,
 				03FB150F1D24203600089DA4 /* AppDelegate.swift */,
 				03FB15311D24237A00089DA4 /* Networking */,
 				03FB15211D24224B00089DA4 /* Models */,
@@ -207,7 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				03FB152A1D2422BF00089DA4 /* NotificationCell.swift */,
-				03FB152C1D2422C400089DA4 /* NotificationCellModel.swift */,
+				03FB152C1D2422C400089DA4 /* NotificationModel.swift */,
+				C8C785821D27D75800CE9F82 /* NotificationCellModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,11 +459,13 @@
 			files = (
 				03FB15291D24227900089DA4 /* Notification.swift in Sources */,
 				03FB15271D24224B00089DA4 /* NotificationListViewModel.swift in Sources */,
-				03FB152D1D2422C400089DA4 /* NotificationCellModel.swift in Sources */,
+				03FB152D1D2422C400089DA4 /* NotificationModel.swift in Sources */,
 				03FB15261D24224B00089DA4 /* NotificationListViewController.swift in Sources */,
+				C8C785811D27D57A00CE9F82 /* ActivityIndicator.swift in Sources */,
 				03FB152B1D2422BF00089DA4 /* NotificationCell.swift in Sources */,
 				03FB15101D24203600089DA4 /* AppDelegate.swift in Sources */,
 				03FB15331D24237A00089DA4 /* API.swift in Sources */,
+				C8C785831D27D75800CE9F82 /* NotificationCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

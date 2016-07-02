@@ -45,20 +45,8 @@ final class NotificationCell: UITableViewCell {
     }
 
     func configure(viewModel: NotificationCellModelType) {
-        self.disposeBag = DisposeBag()
-        guard let disposeBag = disposeBag else { return }
-
-        // Input
-        self.rx_observe(CGRect.self, "bounds")
-            .map { $0?.width ?? 0 }
-            .distinctUntilChanged()
-            .bindTo(viewModel.cellWidth)
-            .addDisposableTo(disposeBag)
-
         // Output
-        viewModel.message
-            .drive(self.messageLabel.rx_attributedText)
-            .addDisposableTo(disposeBag)
+        self.messageLabel.attributedText = viewModel.message
     }
 
 
@@ -66,10 +54,10 @@ final class NotificationCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.messageLabel.sizeToFit()
-        self.messageLabel.top = 10
+        self.messageLabel.top = 0
         self.messageLabel.left = 10
         self.messageLabel.width = self.contentView.width - 20
+        self.messageLabel.height = self.height
     }
 
 }
